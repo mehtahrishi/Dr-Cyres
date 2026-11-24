@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-lora), "Lora", ui-serif, Georgia, serif;
+  --color-deep-teal: #09292b;
+  --color-darkest-teal: #051f21;
+  --color-accent-teal: #155e63;
+  --color-mint-1: #eaffe3;
+  --color-mint-2: #f1ffed;
+  --color-star-gold: #ffd942;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Continuous Doctor Marquee Animation */
+@keyframes clinichub-marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-clinichub-marquee {
+  animation: clinichub-marquee 32s linear infinite;
+}
+
+.animate-clinichub-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Circular Orbit Animations */
+@keyframes clinichub-orbit {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes clinichub-counter-orbit {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.animate-clinichub-orbit {
+  animation: clinichub-orbit 48s linear infinite;
+}
+
+.animate-clinichub-counter-orbit {
+  animation: clinichub-counter-orbit 48s linear infinite;
+}
