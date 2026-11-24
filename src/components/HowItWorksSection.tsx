@@ -54,9 +54,9 @@ export function HowItWorksSection() {
                 <img
                   src={step.illustration}
                   alt={step.alt}
-                  width={150}
-                  height={150}
-                  className="w-[150px] h-[150px] object-contain transition-transform duration-500 ease-out group-hover:scale-105"
+                  width={180}
+                  height={180}
+                  className="w-[180px] h-[180px] object-contain transition-transform duration-500 ease-out group-hover:scale-105"
                 />
                 <InvertedNotch
                   cornerSize={22}

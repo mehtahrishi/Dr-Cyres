@@ -26,14 +26,16 @@ function SpecialtyCard({
   return (
     <motion.div
       style={{ rotate, x, y }}
-      className={`group relative overflow-hidden rounded-[20px] bg-[#F5F7F7] h-[200px] ${
-        item.size === "wide" ? "col-span-2" : "col-span-1"
-      }`}
+      className={`group relative overflow-hidden rounded-[20px] h-[200px] ${
+        item.bgClass || "bg-[#F5F7F7]"
+      } ${item.size === "wide" ? "col-span-2" : "col-span-1"}`}
     >
       <img
         src={item.image}
         alt={item.alt}
-        className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+        className={`w-full h-full transition-transform duration-500 ease-out group-hover:scale-105 ${
+          item.fit === "contain" ? "object-contain p-[18px] pb-[42px]" : "object-cover"
+        }`}
       />
       <InvertedNotch
         cornerSize={22}

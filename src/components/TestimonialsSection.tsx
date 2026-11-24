@@ -86,12 +86,18 @@ export function TestimonialsSection() {
               key={`${item.author}-${idx}`}
               className="w-full max-w-[1080px] shrink-0 grid grid-cols-1 lg:grid-cols-[1.83fr_1fr] gap-[10px]"
             >
-              {/* Left Lifestyle Photo */}
-              <div className="w-full h-[280px] sm:h-[380px] lg:h-[471px] rounded-[15px] overflow-hidden bg-[#F2F5F5]">
+              {/* Left Lifestyle / Clinical Visual */}
+              <div
+                className={`w-full h-[280px] sm:h-[380px] lg:h-[471px] rounded-[15px] overflow-hidden ${
+                  item.bgClass || "bg-[#F2F5F5]"
+                }`}
+              >
                 <img
                   src={item.image}
                   alt={item.alt}
-                  className="w-full h-full object-cover"
+                  className={`w-full h-full ${
+                    item.fit === "contain" ? "object-contain p-[24px]" : "object-cover"
+                  }`}
                 />
               </div>
 

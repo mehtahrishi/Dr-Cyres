@@ -37,13 +37,19 @@ export function DoctorsSection() {
           {duplicatedDoctors.map((doc, idx) => (
             <div
               key={`${doc.name}-${idx}`}
-              className="group relative w-[280px] sm:w-[300px] h-[380px] sm:h-[400px] rounded-[10px] overflow-hidden shrink-0 bg-[#F2F5F5] select-none"
+              className={`group relative w-[280px] sm:w-[300px] h-[380px] sm:h-[400px] rounded-[10px] overflow-hidden shrink-0 select-none ${
+                doc.bgClass || "bg-[#F2F5F5]"
+              }`}
             >
               <img
                 src={doc.image}
                 alt={`${doc.name} — ${doc.specialty}`}
                 draggable={false}
-                className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105"
+                className={`w-full h-full transition-transform duration-500 ease-out group-hover:scale-105 ${
+                  doc.fit === "contain"
+                    ? "object-contain p-[24px] pb-[84px]"
+                    : "object-cover object-center"
+                }`}
               />
               <InvertedNotch
                 cornerSize={20}

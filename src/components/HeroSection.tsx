@@ -1,12 +1,14 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import { motion } from "motion/react";
-import { Play } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
+import { Play, X } from "lucide-react";
 import { siteData } from "@/data/siteData";
 
 export function HeroSection() {
+  const [videoOpen, setVideoOpen] = useState(false);
+
   return (
     <section className="w-full p-[8px] bg-white">
       <div className="relative w-full h-[780px] sm:h-[860px] lg:h-[984px] rounded-[15px] overflow-hidden bg-[#09292B]">
@@ -90,10 +92,19 @@ export function HeroSection() {
               transition={{ duration: 0.7, delay: 0.42, ease: [0.22, 1, 0.36, 1] }}
               className="flex flex-col items-start lg:items-end gap-[14px] max-w-[300px]"
             >
-              <div className="group relative w-[267px] h-[150px] rounded-[12px] overflow-hidden border border-white/15 shadow-[0_12px_32px_rgba(0,0,0,0.3)] cursor-pointer">
-                <img
-                  src={siteData.hero.videoPreview.thumbnail}
-                  alt={siteData.hero.videoPreview.alt}
+              <button
+                type="button"
+                onClick={() => setVideoOpen(true)}
+                aria-label={`Play ${siteData.hero.videoPreview.videoTitle} video`}
+                className="group relative w-[267px] h-[150px] rounded-[12px] overflow-hidden border border-white/15 shadow-[0_12px_32px_rgba(0,0,0,0.3)] cursor-pointer text-left bg-black"
+              >
+                <video
+                  src={siteData.hero.videoPreview.videoSrc}
+                  poster={siteData.hero.videoPreview.thumbnail}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/20 flex items-center justify-center transition-colors duration-300 group-hover:bg-black/10">
@@ -101,7 +112,7 @@ export function HeroSection() {
                     <Play size={16} className="text-white fill-white ml-[2px]" />
                   </div>
                 </div>
-              </div>
+              </button>
 
               <p className="font-sans text-[14px] font-normal leading-[19.6px] text-white/80 lg:text-right">
                 {siteData.hero.videoPreview.caption}
@@ -110,6 +121,49 @@ export function HeroSection() {
           </div>
         </div>
       </div>
+
+      {/* Video Player Modal for MIGS Educational Video */}
+      <AnimatePresence>
+        {videoOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-[20px]"
+            onClick={() => setVideoOpen(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="relative w-full max-w-[820px] rounded-[16px] bg-[#09292B] overflow-hidden shadow-2xl border border-white/15"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex items-center justify-between px-[20px] py-[14px] border-b border-white/10">
+                <span className="font-serif text-[18px] text-white">
+                  {siteData.hero.videoPreview.videoTitle}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setVideoOpen(false)}
+                  aria-label="Close video"
+                  className="w-[32px] h-[32px] rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 cursor-pointer"
+                >
+                  <X size={16} />
+                </button>
+              </div>
+              <video
+                src={siteData.hero.videoPreview.videoSrc}
+                controls
+                autoPlay
+                playsInline
+                className="w-full max-h-[75vh] bg-black"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
