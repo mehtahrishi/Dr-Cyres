@@ -24,18 +24,23 @@ export function Navbar() {
         >
           <Link
             href="/"
-            className="flex items-center gap-[10px] h-[50px] bg-black/60 backdrop-blur-[5px] rounded-[10px] p-[6px] pr-[14px] transition-colors duration-200 hover:bg-black/75"
+            aria-label={siteData.brand.name}
+            className="flex items-center justify-center h-[50px] bg-black/60 backdrop-blur-[5px] rounded-[10px] p-[5px] transition-colors duration-200 hover:bg-black/75"
           >
-            <img
-              src={siteData.brand.logoSquare}
-              alt={`${siteData.brand.name} logo`}
-              width={38}
-              height={38}
-              className="w-[38px] h-[38px] rounded-[7px] object-cover shadow-[0_3px_6px_rgba(0,0,0,0.25)]"
-            />
-            <span className="font-serif text-[18px] font-medium leading-[21.6px] text-white tracking-[-0.01em]">
-              {siteData.brand.name}
-            </span>
+            <div
+              style={{
+                backgroundColor: "#FFFFFF",
+                borderRadius: "7px",
+                padding: "5px 12px",
+              }}
+              className="h-full flex items-center justify-center shadow-[0_3px_6px_rgba(0,0,0,0.25)]"
+            >
+              <img
+                src={siteData.brand.logoSquare}
+                alt={`${siteData.brand.name} logo`}
+                style={{ height: "28px", width: "auto", display: "block" }}
+              />
+            </div>
           </Link>
         </motion.div>
 

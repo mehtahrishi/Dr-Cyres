@@ -8,6 +8,7 @@ import { HowItWorksSection } from "@/components/HowItWorksSection";
 import { WhyClinicHubSection } from "@/components/WhyClinicHubSection";
 import { DoctorsSection } from "@/components/DoctorsSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
+import { VideosSection } from "@/components/VideosSection";
 import { FaqSection } from "@/components/FaqSection";
 import { Footer } from "@/components/Footer";
 
@@ -23,6 +24,7 @@ export default function HomePage() {
       <WhyClinicHubSection />
       <DoctorsSection />
       <TestimonialsSection />
+      <VideosSection />
       <FaqSection />
       <Footer />
     </main>

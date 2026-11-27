@@ -15,35 +15,37 @@ export function InvertedNotch({
 }: InvertedNotchProps) {
   return (
     <div
-      className={`absolute bottom-0 right-0 z-10 bg-white rounded-tl-[20px] ${className}`}
+      className={`absolute -bottom-[1px] -right-[1px] z-10 bg-white rounded-tl-[20px] ${className}`}
       style={{ backgroundColor: fillColor }}
     >
-      {/* Top-right concave corner mask */}
+      {/* Top-right concave corner mask (overlapped by 1px to prevent subpixel seams) */}
       <svg
         aria-hidden="true"
-        width={cornerSize}
-        height={cornerSize}
-        viewBox="0 0 20 20"
+        width={cornerSize + 1}
+        height={cornerSize + 1}
+        viewBox="0 0 21 21"
         fill="none"
-        className="pointer-events-none absolute bottom-full right-0 block"
+        className="pointer-events-none absolute right-0 block"
+        style={{ bottom: "calc(100% - 1px)" }}
       >
         <path
-          d="M20 0V20H0C11.0457 20 20 11.0457 20 0Z"
+          d="M21 0V21H0V20C11.0457 20 20 11.0457 20 0H21Z"
           fill={fillColor}
         />
       </svg>
 
-      {/* Bottom-left concave corner mask */}
+      {/* Bottom-left concave corner mask (overlapped by 1px to prevent subpixel seams) */}
       <svg
         aria-hidden="true"
-        width={cornerSize}
-        height={cornerSize}
-        viewBox="0 0 20 20"
+        width={cornerSize + 1}
+        height={cornerSize + 1}
+        viewBox="0 0 21 21"
         fill="none"
-        className="pointer-events-none absolute bottom-0 right-full block"
+        className="pointer-events-none absolute bottom-0 block"
+        style={{ right: "calc(100% - 1px)" }}
       >
         <path
-          d="M20 0V20H0C11.0457 20 20 11.0457 20 0Z"
+          d="M21 0V21H0V20C11.0457 20 20 11.0457 20 0H21Z"
           fill={fillColor}
         />
       </svg>

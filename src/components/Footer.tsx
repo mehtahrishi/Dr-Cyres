@@ -27,13 +27,20 @@ export function Footer() {
           transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-col items-center text-center gap-[28px]"
         >
-          <img
-            src={siteData.brand.logoSquare}
-            alt={`${siteData.brand.name} logo`}
-            width={75}
-            height={75}
-            className="w-[75px] h-[75px] rounded-[15px] object-cover shadow-[0_12px_28px_rgba(0,0,0,0.3)]"
-          />
+          <div
+            style={{
+              backgroundColor: "#FFFFFF",
+              borderRadius: "14px",
+              padding: "14px 22px",
+            }}
+            className="inline-flex items-center justify-center shadow-[0_12px_28px_rgba(0,0,0,0.3)]"
+          >
+            <img
+              src={siteData.brand.logoSquare}
+              alt={`${siteData.brand.name} logo`}
+              style={{ height: "48px", width: "auto", display: "block" }}
+            />
+          </div>
           <h2 className="font-serif text-[34px] sm:text-[42px] font-normal leading-[50.4px] tracking-[-0.84px] text-white max-w-[520px]">
             {siteData.footer.ctaHeading}
           </h2>

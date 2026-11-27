@@ -68,24 +68,30 @@ export interface TrustBadge {
   height: number;
 }
 
+export interface YouTubeVideoItem {
+  videoId: string;
+  title: string;
+  category: string;
+}
+
 export const siteData = {
   brand: {
-    name: "Dr. Mehta Eye Centre",
+    name: "Dr. Cyres Eye Centre",
     logoSquare:
-      "https://framerusercontent.com/images/oBwn9sqZ99XUyekqmWbeTyTZgA.png?scale-down-to=512&width=600&height=600",
+      "https://cyreseye.com/wp-content/uploads/2025/08/logo-2020.jpg",
     crossMark:
-      "https://framerusercontent.com/images/HM5PHGoa60qPQJbIT4qAtJbLfY0.png?width=118&height=118",
+      "https://cyreseye.com/wp-content/uploads/2025/08/icon-02.png",
     title:
-      "MIGS Glaucoma Surgery in Mumbai | Dr. Cyres K. Mehta Eye Centre",
+      "MIGS Glaucoma Surgery in Mumbai | Dr. Cyres K. Mehta’s International Eye Centre",
     description:
-      "Minimally invasive glaucoma surgery in Mumbai using Hydrus® and iStent inject® W microstents. Lower eye pressure, fewer drops, recovery in days. Book a consult.",
+      "Minimally invasive glaucoma surgery in Mumbai using Hydrus® and iStent inject® W microstents at Dr. Cyres K. Mehta’s International Eye Centre, Colaba. Lower eye pressure, fewer drops, recovery in days.",
   },
 
   nav: {
     links: [
       { label: "Implants", href: "/#expertise" },
       { label: "Why MIGS", href: "/#why-us" },
-      { label: "Gallery", href: "/#doctors" },
+      { label: "Videos", href: "/#videos" },
       { label: "Evidence", href: "/#reviews" },
     ] as NavLink[],
     cta: {
@@ -95,7 +101,7 @@ export const siteData = {
   },
 
   hero: {
-    ratingText: "Hydrus® & iStent inject® W · Mumbai",
+    ratingText: "50,000+ Procedures · 25+ Countries · Colaba, Mumbai",
     starCount: 5,
     heading: "Minimally Invasive Glaucoma Surgery (MIGS)",
     cta: {
@@ -103,9 +109,9 @@ export const siteData = {
       href: "/visit-us",
     },
     backgroundImage:
-      "https://framerusercontent.com/images/9couhjelan4XsaHiDc5LY5DHUc.webp?scale-down-to=2048&width=5504&height=3072",
+      "https://cyreseye.com/wp-content/uploads/2026/02/Next-generation-robotic-cataract-surgery-in-Mumbai.png",
     backgroundAlt:
-      "Dr. Cyres K. Mehta International Eye Centre glaucoma consultation",
+      "Next-generation ophthalmic surgical theatre at Dr. Cyres K. Mehta’s International Eye Centre, Mumbai",
     videoPreview: {
       thumbnail: "/images/migs/eye-anatomy-outflow.jpg",
       videoSrc: "/images/migs/video1.mp4",
@@ -126,45 +132,45 @@ export const siteData = {
       label: "Hydrus® patients\nmedication-free at 5 years",
     },
     {
-      value: "15–20m",
-      label: "Same-day micro-incision\nprocedure duration",
+      value: "50K+",
+      label: "Successful eye procedures\nby Dr. Cyres K. Mehta",
     },
   ] as MetricItem[],
 
   about: {
     editorialStatement:
       "Before MIGS, the choices were often daily glaucoma drops for life or a major glaucoma operation, with little in between. MIGS works from inside the eye, uses the eye's natural drainage pathway, and leaves the outer wall untouched.",
-    heading: "Dr. Cyres K. Mehta, Pioneer in Non-Penetrating Glaucoma & MIGS",
+    heading: "Dr. Cyres K. Mehta — International Hero of Indian Ophthalmology",
     orbitImages: [
       {
-        src: "/images/migs/eye-anatomy-outflow.jpg",
-        alt: "Natural aqueous outflow pathway through Schlemm's canal",
+        src: "https://cyreseye.com/wp-content/uploads/2026/02/dr-scaled-1.jpeg",
+        alt: "Dr. Cyres K. Mehta — Surgical Chief, International Eye Centre",
       },
       {
-        src: "/images/migs/eye-exam-oct.jpg",
-        alt: "Non-invasive OCT and gonioscopy eye assessment",
+        src: "https://cyreseye.com/wp-content/uploads/2026/08/Alcon-Unity-VCS-new.jpeg",
+        alt: "Alcon Unity 4D Phaco robotic cataract surgery system",
       },
       {
-        src: "/images/migs/migs-microsurgery.jpg",
-        alt: "Ophthalmic microsurgical operating microscope",
+        src: "https://cyreseye.com/wp-content/uploads/2026/01/the-human-eye-2.jpg",
+        alt: "Macro human eye anatomy and vision care",
       },
       {
-        src: "/images/migs/doctor-portrait.jpg",
-        alt: "Senior ophthalmologist at Dr. Cyres K. Mehta Eye Centre",
+        src: "https://cyreseye.com/wp-content/uploads/2026/02/Next-generation-robotic-cataract-surgery-in-Mumbai.png",
+        alt: "Next-generation robotic cataract and glaucoma theatre in Mumbai",
       },
       {
-        src: "/images/migs/banner-side.webp",
-        alt: "Patient undergoing slit-lamp eye examination",
+        src: "https://cyreseye.com/wp-content/uploads/2026/02/Dr.-Cyres-Mehtas-gold-medal-award.png",
+        alt: "Dr. Cyres K. Mehta receiving international ophthalmology gold medal",
       },
       {
-        src: "https://framerusercontent.com/images/7lNYd2rQbORrTGJCszMScJqIbGo.jpg?width=562&height=567",
-        alt: "Smiling senior patient with clear vision",
+        src: "https://cyreseye.com/wp-content/uploads/2026/08/amazon-book-new.webp",
+        alt: "Published ophthalmology book by Dr. Cyres K. Mehta",
       },
     ] as OrbitImage[],
   },
 
   expertise: {
-    eyebrow: "THE IMPLANTS & APPROACH",
+    eyebrow: "THE IMPLANTS & TECHNOLOGY",
     heading: "Two Implants, One Natural Goal",
     centerCard: {
       heading: "Work with the eye's drainage system, not around it",
@@ -199,25 +205,27 @@ export const siteData = {
         fit: "cover",
       },
       {
-        title: "OCT & Gonioscopy",
-        image: "/images/migs/eye-exam-oct.jpg",
-        alt: "Patient undergoing OCT imaging and gonioscopy assessment",
+        title: "4D Phaco Alcon Unity™",
+        image:
+          "https://cyreseye.com/wp-content/uploads/2026/08/Alcon-Unity-VCS-new.jpeg",
+        alt: "Alcon Unity VCS robotic cataract and ophthalmic system",
         column: "right",
         size: "square",
         fit: "cover",
       },
       {
-        title: "Microsurgical Suite",
-        image: "/images/migs/migs-microsurgery.jpg",
-        alt: "Modern ophthalmic microsurgery microscope",
+        title: "Robotic Laser Suite",
+        image: "https://cyreseye.com/wp-content/uploads/2026/08/machine.jpg",
+        alt: "Robotic laser and microsurgical diagnostic suite",
         column: "right",
         size: "square",
         fit: "cover",
       },
       {
-        title: "Same-Day Slit-Lamp Care",
-        image: "/images/migs/banner-side.webp",
-        alt: "Slit-lamp glaucoma consultation and follow-up",
+        title: "Glaucoma Management",
+        image:
+          "https://cyreseye.com/wp-content/uploads/2026/01/Glaucoma-Management-1.webp",
+        alt: "Comprehensive glaucoma diagnostics and care at International Eye Centre",
         column: "right",
         size: "wide",
         fit: "cover",
@@ -257,29 +265,29 @@ export const siteData = {
   },
 
   whyClinicHub: {
-    eyebrow: "WHY PATIENTS CHOOSE MIGS",
+    eyebrow: "WHY DR. CYRES K. MEHTA",
     heading: "Minimally Invasive Care, Recovery Measured In Days",
-    bannerImage:
-      "https://framerusercontent.com/images/NyHAAOvVVy1zwhT2jhcsCaheuI.webp?scale-down-to=2048&width=6336&height=2688",
-    bannerAlt: "Clear vision and family eye care",
+    bannerImage: "/images/migs/eye-exam-oct.jpg",
+    bannerAlt: "Patient undergoing OCT and gonioscopy assessment at Dr. Cyres K. Mehta Eye Centre",
     cards: {
       awardDoctors: {
-        title: "Suitability-First Planning",
+        title: "Pioneer in Glaucoma & MIGS",
         description:
-          "Gonioscopy, OCT imaging, and visual-field testing help Dr. Cyres K. Mehta decide whether MIGS or another glaucoma treatment serves you best.",
+          "Recipient of the Parsi Ratna Award, British Ophthalmic Excellence Award & AIOS International Hero honor — combining gonioscopy, OCT imaging, and 50,000+ procedures.",
         featuredDoctor: {
           name: "Dr. Cyres K. Mehta",
-          role: "Glaucoma & MIGS Pioneer",
-          avatar: "/images/migs/doctor-portrait.jpg",
+          role: "Surgical Chief · 50,000+ Procedures",
+          avatar:
+            "https://cyreseye.com/wp-content/uploads/2026/02/dr-scaled-1.jpeg",
         },
       },
       easyBooking: {
         title: "Same-Day Procedure & Fast Recovery",
         description:
-          "Performed under local anaesthetic in 15–20 minutes — standalone or combined with robotic cataract surgery — with light routine resuming within Week 1.",
+          "Performed under local anaesthetic in 15–20 minutes — standalone or combined with 4D Phaco Alcon Unity™ robotic cataract surgery — with light routine resuming within Week 1.",
         mockup: {
           dialogTitle: "Schedule MIGS Assessment",
-          dialogSubtitle: "Gonioscopy & OCT suitability evaluation",
+          dialogSubtitle: "Colaba, Mumbai · Gonioscopy & OCT evaluation",
           dateValue: "Today",
           timeValue: "10:30 AM",
           confirmLabel: "Book Consultation",
@@ -379,12 +387,162 @@ export const siteData = {
           "“55% relative reduction in further glaucoma surgery at five years with Hydrus® (2.4% vs 5.3%). Because MIGS preserves the outer wall of the eye, future options stay open if ever needed.”",
         author: "Natural Outflow",
         department: "Anatomy Preserved",
-        image: "/images/migs/migs-microsurgery.jpg",
-        alt: "Ophthalmic microsurgery suite for glaucoma and cataract care",
+        image:
+          "https://cyreseye.com/wp-content/uploads/2026/02/Next-generation-robotic-cataract-surgery-in-Mumbai.png",
+        alt: "Next-generation robotic cataract and glaucoma microsurgery in Mumbai",
         fit: "cover",
         bgClass: "bg-[#F2F5F5]",
       },
     ] as TestimonialItem[],
+  },
+
+  videos: {
+    eyebrow: "WATCH & LEARN",
+    heading: "Dr. Cyres K. Mehta On YouTube",
+    subtitle:
+      "Watch Dr. Cyres explain MIGS microstents, 4D Phaco robotic cataract surgery, SMILE vision correction, and real patient journeys.",
+    channelUrl: "https://youtube.com/@drcyresmehtaeyecentre",
+    channelCtaLabel: "Visit @drcyresmehtaeyecentre on YouTube",
+    categories: [
+      "MIGS & Glaucoma",
+      "Cataract & 4D Phaco",
+      "Patient Stories",
+      "SMILE & LASIK",
+      "Clinic & Awards",
+      "All",
+    ],
+    items: [
+      // MIGS & Glaucoma
+      {
+        videoId: "x-4oyNOC5HE",
+        title: "Glaucoma Surgery Has Changed! What is MIGS? | Explained by Dr Cyres Mehta",
+        category: "MIGS & Glaucoma",
+      },
+      {
+        videoId: "OcRLCdMmHC0",
+        title: "Glaucoma Treatment Explained: Eye Drops, Side Effects & When Surgery Is Needed",
+        category: "MIGS & Glaucoma",
+      },
+      {
+        videoId: "JY-kgtiw22k",
+        title: "Glaucoma: The Silent Threat to Your Vision - What You Need to Know!",
+        category: "MIGS & Glaucoma",
+      },
+      {
+        videoId: "rME6-JPhLZc",
+        title: "Discover how the tiny iStent can make a big difference in glaucoma management",
+        category: "MIGS & Glaucoma",
+      },
+      {
+        videoId: "86VU1KByQnU",
+        title: "Tired of Glaucoma Eye Drops? Discover MIGS",
+        category: "MIGS & Glaucoma",
+      },
+      {
+        videoId: "q1xFHTWDiT4",
+        title: "Tiny device. Big impact. (MIGS / iStent)",
+        category: "MIGS & Glaucoma",
+      },
+      // Cataract & 4D Phaco
+      {
+        videoId: "Fci9Gkujocg",
+        title: "Alcon’s Unity Platform with 4D Phaco Technology for Cataract Surgery",
+        category: "Cataract & 4D Phaco",
+      },
+      {
+        videoId: "LA7SKjWrZDM",
+        title: "Mumbai’s First AI Unity 4D Laser Cataract Surgery System",
+        category: "Cataract & 4D Phaco",
+      },
+      {
+        videoId: "_RPv-YgZ8ho",
+        title: "Best Cataract Surgery & Lens Options Explained for Clear Vision",
+        category: "Cataract & 4D Phaco",
+      },
+      {
+        videoId: "GZj1kjeQIvg",
+        title: "Robotic Cataract Surgery in India | Choose Tech Over Price",
+        category: "Cataract & 4D Phaco",
+      },
+      {
+        videoId: "ESlYFazGrtA",
+        title: "The Evolution and Latest Technology in Cataract Surgery",
+        category: "Cataract & 4D Phaco",
+      },
+      {
+        videoId: "X-I8G6q1cYI",
+        title: "Revolutionary Digital Microscope with 3D Glasses — First in India",
+        category: "Cataract & 4D Phaco",
+      },
+      // Patient Stories
+      {
+        videoId: "2y1aRPrXLZs",
+        title: "Her Words, Her Journey — Patient Experience with Dr Cyres Mehta",
+        category: "Patient Stories",
+      },
+      {
+        videoId: "AM4HU8uDpF0",
+        title: "Ranveer Allahbadia Shares His Laser Vision Correction Experience",
+        category: "Patient Stories",
+      },
+      {
+        videoId: "QeWV07HnVn0",
+        title: "Dr Tanushree Pandya (Mrs India) Says Goodbye to Specs with SMILE",
+        category: "Patient Stories",
+      },
+      {
+        videoId: "1O19MtJ3zR4",
+        title: "Dr. Cyres Mehta Selected SMILE for His Son Bezan’s Vision Correction",
+        category: "Patient Stories",
+      },
+      {
+        videoId: "DEVyTn2UNzs",
+        title: "Real Patient Reviews | Dr. Cyres Mehta",
+        category: "Patient Stories",
+      },
+      {
+        videoId: "c38mBP-tZ-k",
+        title: "Lens Replacement Review: Painless Surgery in Just 10 Minutes",
+        category: "Patient Stories",
+      },
+      // SMILE & LASIK
+      {
+        videoId: "DHCbHV_EIik",
+        title: "SMILE vs LASIK: The Preferred Choice of Commercial & Fighter Jet Pilots",
+        category: "SMILE & LASIK",
+      },
+      {
+        videoId: "EZB3ZvfNTsg",
+        title: "Why SMILE Laser Surgery Is Better Than LASIK — Key Advantages",
+        category: "SMILE & LASIK",
+      },
+      {
+        videoId: "QRi0h8okXvA",
+        title: "Understanding the ICL Procedure: A Vision Correction Breakthrough",
+        category: "SMILE & LASIK",
+      },
+      // Clinic & Awards
+      {
+        videoId: "HN-pswPQ-WE",
+        title: "The Story Behind CYRES: The Education of an Ophthalmologist",
+        category: "Clinic & Awards",
+      },
+      {
+        videoId: "EGVKpVhhUw4",
+        title: "World-Class Eye Care with Dr Cyres Mehta | Latest Tech, Trusted Expertise",
+        category: "Clinic & Awards",
+      },
+      {
+        videoId: "0piCOntePng",
+        title: "International Hero of Indian Ophthalmology Award",
+        category: "Clinic & Awards",
+      },
+      {
+        videoId: "-6C329_Jp_c",
+        title: "17th Annual Surgical Camp | Mumbai Police Free Cataract Surgery",
+        category: "Clinic & Awards",
+      },
+    ] as YouTubeVideoItem[],
   },
 
   faq: {
@@ -393,7 +551,7 @@ export const siteData = {
     ctaCard: {
       heading: "Book a consultation",
       subtitle:
-        "Gonioscopy and OCT imaging help Dr. Cyres decide whether MIGS is appropriate for your eyes.",
+        "Gonioscopy and OCT imaging at our Colaba, Mumbai centre help Dr. Cyres decide whether MIGS is right for you.",
       buttonLabel: "Book a Visit",
       buttonHref: "/visit-us",
     },
@@ -456,24 +614,34 @@ export const siteData = {
         ],
       },
       {
-        heading: "Eye Services",
+        heading: "Eye Centre",
         links: [
           { label: "MIGS Glaucoma Surgery", href: "/" },
           { label: "Book Consultation", href: "/visit-us" },
+          { label: "Official Website", href: "https://cyreseye.com/" },
           { label: "Privacy Policy", href: "/privacy-policy" },
         ],
       },
       {
-        heading: "Contact",
+        heading: "Contact Colaba",
         links: [
-          { label: "Call 98198 50971", href: "tel:+919819850971" },
-          { label: "Why Choose MIGS?", href: "/#why-us" },
+          { label: "Call +91 98198 50971", href: "tel:+919819850971" },
+          { label: "022-22040711", href: "tel:+912222040711" },
+          { label: "cyresmehta@yahoo.com", href: "mailto:cyresmehta@yahoo.com" },
           { label: "Patient FAQs", href: "/#faq" },
         ],
       },
     ] as FooterColumn[],
-    trustLabel: "Trusted by patients and backed by clinical standards",
+    trustLabel:
+      "Consultant to Maharashtra Police since 2003 · 70+ free surgeries annually",
     trustBadges: [
+      {
+        name: "Mumbai Police Free Cataract & Glaucoma Initiative",
+        image:
+          "https://cyreseye.com/wp-content/uploads/2026/01/Mumbai_Police_logo.png",
+        width: 50,
+        height: 48,
+      },
       {
         name: "ISO 9001 Certified",
         image:
@@ -490,21 +658,24 @@ export const siteData = {
       },
     ] as TrustBadge[],
     disclaimer:
-      "Medical information on this page is for patient education and is not a substitute for an examination or individualized medical advice. Trial averages do not predict an individual result; MIGS does not restore vision already lost and is not a cure for glaucoma. Device indications, availability and treatment selection should be confirmed with your ophthalmologist.",
-    copyrightPrefix: "© 2026 Dr. Cyres K. Mehta Eye Centre. All rights reserved. ",
-    creatorLabel: "Call 98198 50971",
-    creatorHref: "tel:+919819850971",
+      "Dr. Cyres K. Mehta’s International Eye Centre — 202, Ramnimi Building, 2nd Floor, Mandlik Road, Opposite Colaba Police Station, Colaba, Mumbai – 400001. Medical information on this page is for patient education and is not a substitute for an examination or individualized medical advice. Trial averages do not predict an individual result; MIGS does not restore vision already lost and is not a cure for glaucoma.",
+    copyrightPrefix:
+      "© 2026 Dr. Cyres K. Mehta’s International Eye Centre. All rights reserved. ",
+    creatorLabel: "cyreseye.com",
+    creatorHref: "https://cyreseye.com/",
   },
 
   visitUs: {
-    pageTitle: "Book a MIGS Consultation | Dr. Cyres K. Mehta Eye Centre",
+    pageTitle:
+      "Book a MIGS Consultation | Dr. Cyres K. Mehta’s International Eye Centre",
     hero: {
       heading: "Book Your MIGS Glaucoma Consultation",
       subtitle:
-        "Call us on 98198 50971 or fill out the form to schedule your gonioscopy and OCT suitability assessment.",
+        "Call us on +91 98198 50971 or fill out the form to schedule your gonioscopy and OCT assessment in Colaba, Mumbai.",
       backgroundImage:
-        "https://framerusercontent.com/images/VpnNnqYD7pP5JnRwjrJ2zbZk2U.webp?width=5504&height=3072",
-      backgroundAlt: "Doctor consulting with patient for eye assessment",
+        "https://cyreseye.com/wp-content/uploads/2025/08/post-img1.jpg",
+      backgroundAlt:
+        "Dr. Cyres K. Mehta’s International Eye Centre clinical care",
       form: {
         fullNameLabel: "Full name *",
         fullNamePlaceholder: "Jane Smith",
@@ -517,8 +688,8 @@ export const siteData = {
         servicePlaceholder: "Select…",
         services: [
           "MIGS (Glaucoma Microstent)",
-          "Robotic Cataract Surgery",
-          "Glaucoma Management",
+          "4D Phaco Alcon Unity™ Robotic Cataract Surgery",
+          "Glaucoma Management (SLT Nano / NPGS)",
           "ReLEx SMILE",
           "Advanced LASIK & Contoura",
           "Keratoconus & C3R",
@@ -529,31 +700,32 @@ export const siteData = {
         submitLabel: "Submit",
       },
       contactStrip: {
-        emergencyLabel: "Direct Clinic Phone",
-        emergencyPhone: "98198 50971",
+        emergencyLabel: "24/7 Emergency & WhatsApp",
+        emergencyPhone: "+91 98198 50971",
         emergencyHref: "tel:+919819850971",
-        hoursLabel: "Procedure Time",
-        hoursValue: "15–20 mins · Same-day",
+        hoursLabel: "Working Hours (Mon–Sat)",
+        hoursValue: "9:00 AM – 8:00 PM",
       },
     },
     location: {
-      eyebrow: "OUR CENTRE",
-      heading: "Dr. Cyres K. Mehta International Eye Centre",
+      eyebrow: "COLABA, MUMBAI",
+      heading: "Dr. Cyres K. Mehta’s International Eye Centre",
       image:
-        "https://framerusercontent.com/images/7aLFPjkOfEpVb241G1lyVrhCY.webp?width=4608&height=3712",
-      imageAlt: "International Eye Centre waiting lounge",
-      mapsLabel: "Chat on WhatsApp",
+        "https://cyreseye.com/wp-content/uploads/2026/02/Dr.-Cyres-Mehtas-gold-medal-award.png",
+      imageAlt:
+        "Dr. Cyres K. Mehta’s International Eye Centre — Gold Medal Awardee",
+      mapsLabel: "See on maps",
       mapsHref:
-        "https://wa.me/919819850971?text=Hi%2C%20I%20would%20like%20to%20know%20if%20I%20am%20suitable%20for%20MIGS%20glaucoma%20surgery.",
-      addressTitle: "Location & Follow-Up",
+        "https://maps.google.com/?q=Dr.+Cyres+Mehta+International+Eye+Centre+Colaba+Mumbai",
+      addressTitle: "Address",
       addressLines: [
-        "Dr. Cyres K. Mehta Eye Centre, Mumbai",
-        "Planned follow-ups: Day 1, Week 1, Month 1 & Month 3",
+        "202, Ramnimi Building, 2nd Floor, Mandlik Road,",
+        "Opposite Colaba Police Station, Colaba, Mumbai – 400001",
       ],
-      hoursTitle: "Direct Contact",
+      hoursTitle: "Hours & Direct Contact",
       hoursLines: [
-        "Phone / WhatsApp: +91 98198 50971",
-        "Complete reimbursement paperwork provided after surgery",
+        "Mon – Sat : 9:00 AM – 8:00 PM (Sun Closed · 24/7 Emergencies)",
+        "+91 98198 50971 · +91 90764 35971 · 022-22040711 · cyresmehta@yahoo.com",
       ],
     },
   },
